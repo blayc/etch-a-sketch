@@ -1,0 +1,27 @@
+*, 
+::before, 
+::after {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0
+}
+
+body {
+    height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.tiles {
+    display: grid; 
+    height: 750px; 
+    width: 750px;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    border: 1px solid black;
+}
+
+.tile {
+    border: 1px solid black;
+}
