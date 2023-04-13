@@ -1,37 +1,42 @@
-const tiles = document.querySelector('.tiles');
+const wrapper = document.querySelector('.tiles');
 const gridSizer = document.querySelector(".grid-size-select");
-const tile = document.querySelector ("tile");
 let gridSize; 
 
 function createTile () {
     const tile = document.createElement("div"); 
-
     tile.classList.add("tile"); 
-
     return tile;
 }; 
 
 function createTiles (quantity) {
     Array.from(Array(quantity)).map((tile) => {
-        tiles.appendChild(createTile());
+        wrapper.appendChild(createTile());
     })
 };
 
 function createGrid (gridSize) {
+    wrapper.innerHTML = '';
     createTiles(gridSize*gridSize);
-    tiles.style.setProperty("--gridSize", gridSize)
+    wrapper.style.setProperty("--gridSize", gridSize);
+    const tiles = document.querySelectorAll(".tile");
+    tiles.forEach(tile => {tile.addEventListener('mouseenter', colorIn)});
 }
 
 
 function getGridSize () {
-    tiles.innerHTML = '';
     gridSize = prompt('Enter a number between 1 and 100');
     createGrid(gridSize);
 }
 
 gridSizer.addEventListener('click', getGridSize);
 
-; 
+function colorIn (e) {
+    e.target.style.background = 'black'
+}
+
+
+
+
 
 // pseudocode
 
