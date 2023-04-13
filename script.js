@@ -33,7 +33,7 @@ function getGridSize () {
 gridSizer.addEventListener('click', getGridSize);
 
 function colorIn (e) {
-    e.target.style.background = 'black'
+    e.target.style.backgroundColor = 'black'
 }
 
 
