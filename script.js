@@ -24,7 +24,9 @@ function createGrid (gridSize) {
 
 
 function getGridSize () {
-    gridSize = prompt('Enter a number between 1 and 100');
+    gridSize = 0;
+    while(gridSize < 1 || gridSize > 100 || isNaN(gridSize)) {
+    gridSize = prompt('Enter a number between 1 and 100')};
     createGrid(gridSize);
 }
 
