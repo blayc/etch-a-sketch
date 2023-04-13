@@ -1,3 +1,4 @@
+
 *, 
 ::before, 
 ::after {
@@ -11,17 +12,31 @@ body {
     display: flex; 
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 2em;
+    background: black;
 }
 
 .tiles {
     display: grid; 
-    height: 750px; 
-    width: 750px;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    height: 700px; 
+    width: 700px;
+    grid-template-columns: repeat(var(--gridSize), 1fr);
+    grid-template-rows: repeat(var(--gridSize), 1fr);
     border: 1px solid black;
+    background: white;
 }
 
 .tile {
     border: 1px solid black;
+}
+
+button {
+    padding: 1em 1.5em;
+    font-size: 1rem;
+    background: darkmagenta;
+    border: white;
+    color: white; 
+    border-radius: 5px; 
+    box-shadow: 0 0 50px rgba(139, 0, 139, .8);
 }
